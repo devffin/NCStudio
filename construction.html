@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NC Studio | Site en construction</title>
+  <meta name="description" content="Le site NC Studio est actuellement en mise a jour. Revenez bientot." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=4" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-0: #050816;
+      --bg-1: #0a1028;
+      --bg-2: #111b3a;
+      --ink: #d6e4ff;
+      --ink-soft: #9fb2e6;
+      --line: #2a3569;
+      --neon-cyan: #00f5ff;
+      --neon-pink: #ff3df5;
+      --neon-blue: #4f7cff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Rajdhani", sans-serif;
+      color: var(--ink);
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(0, 245, 255, 0.16), transparent 38%),
+        radial-gradient(circle at 88% 12%, rgba(255, 61, 245, 0.14), transparent 36%),
+        linear-gradient(130deg, var(--bg-0) 0%, var(--bg-1) 52%, var(--bg-2) 100%);
+      padding: 1rem;
+      overflow: hidden;
+    }
+
+    .card {
+      width: min(720px, 100%);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1.5rem;
+      background: rgba(9, 15, 38, 0.8);
+      box-shadow:
+        0 0 0 1px rgba(79, 124, 255, 0.22) inset,
+        0 0 34px rgba(0, 245, 255, 0.14);
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo-orbit {
+      position: relative;
+      width: 170px;
+      height: 170px;
+      margin: 0 auto 1rem;
+      display: grid;
+      place-items: center;
+    }
+
+    .logo-core {
+      position: relative;
+      z-index: 3;
+      font-family: "Orbitron", sans-serif;
+      font-size: 3.2rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: transparent;
+      -webkit-text-stroke: 1.6px var(--neon-cyan);
+      text-shadow:
+        0 0 10px rgba(0, 245, 255, 0.45),
+        0 0 20px rgba(79, 124, 255, 0.28);
+    }
+
+    .ring {
+      position: absolute;
+      border-radius: 999px;
+      border: 2px solid transparent;
+      transform-origin: center;
+      will-change: transform;
+    }
+
+    .ring.one {
+      inset: 8px;
+      border-top-color: var(--neon-cyan);
+      border-right-color: rgba(0, 245, 255, 0.55);
+      filter: drop-shadow(0 0 8px rgba(0, 245, 255, 0.45));
+    }
+
+    .ring.two {
+      inset: 0;
+      border-bottom-color: var(--neon-pink);
+      border-left-color: rgba(255, 61, 245, 0.5);
+      filter: drop-shadow(0 0 8px rgba(255, 61, 245, 0.35));
+    }
+
+    .ring.three {
+      inset: 18px;
+      border-top-color: var(--neon-blue);
+      border-left-color: rgba(79, 124, 255, 0.45);
+      filter: drop-shadow(0 0 8px rgba(79, 124, 255, 0.4));
+      opacity: 0.85;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.28rem 0.65rem;
+      border: 1px solid rgba(0, 245, 255, 0.45);
+      border-radius: 999px;
+      color: var(--neon-cyan);
+      font-family: "Orbitron", sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.8rem;
+    }
+
+    h1 {
+      margin: 0 0 0.6rem;
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      line-height: 1.15;
+      text-shadow: 0 0 14px rgba(0, 245, 255, 0.22);
+    }
+
+    p {
+      margin: 0 auto;
+      color: var(--ink-soft);
+      max-width: 55ch;
+      font-size: 1.1rem;
+    }
+
+    .status {
+      margin-top: 1rem;
+      color: var(--neon-pink);
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .actions {
+      margin-top: 1.2rem;
+      display: flex;
+      justify-content: center;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 0.72rem 1.1rem;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #1550ff 0%, #00d9ff 100%);
+      color: #031123;
+      box-shadow: 0 0 16px rgba(0, 245, 255, 0.35);
+    }
+
+    .btn-secondary {
+      color: var(--neon-cyan);
+      border-color: rgba(0, 245, 255, 0.45);
+      background: rgba(2, 18, 38, 0.6);
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="logo-orbit" aria-hidden="true">
+      <span class="ring one" data-ring="1"></span>
+      <span class="ring two" data-ring="2"></span>
+      <span class="ring three" data-ring="3"></span>
+      <span class="logo-core">NC</span>
+    </div>
+
+    <span class="badge">MISE A JOUR EN COURS</span>
+    <h1>Le site est en construction</h1>
+    <p>
+      Nous effectuons actuellement des ameliorations pour revenir avec une version plus complete.
+      Merci pour votre patience.
+    </p>
+    <p class="status">Retour tres bientot.</p>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="https://discord.gg/3ukNzVD94q" target="_blank" rel="noopener noreferrer">Rejoindre Discord</a>
+      <a class="btn btn-secondary" href="index.html">Revenir a l'accueil</a>
+    </div>
+  </main>
+
+  <script>
+    const rings = [
+      { el: document.querySelector('[data-ring="1"]'), angle: 0, base: 118, amp: 62, freq: 1.35, dir: 1, scaleAmp: 0.055, phase: 0 },
+      { el: document.querySelector('[data-ring="2"]'), angle: 0, base: 82, amp: 46, freq: 0.95, dir: -1, scaleAmp: 0.075, phase: 1.2 },
+      { el: document.querySelector('[data-ring="3"]'), angle: 0, base: 156, amp: 72, freq: 1.7, dir: 1, scaleAmp: 0.04, phase: 2.1 },
+    ];
+
+    let last = performance.now();
+
+    const tick = (now) => {
+      const dt = Math.min((now - last) / 1000, 0.05);
+      last = now;
+      const t = now / 1000;
+
+      rings.forEach((ring) => {
+        if (!ring.el) return;
+        const speed = ring.base + ring.amp * Math.sin(t * ring.freq + ring.phase);
+        ring.angle += speed * dt * ring.dir;
+        const scale = 1 + ring.scaleAmp * Math.sin(t * (ring.freq * 0.8) + ring.phase * 1.1);
+        ring.el.style.transform = `rotate(${ring.angle.toFixed(2)}deg) scale(${scale.toFixed(3)})`;
+      });
+
+      requestAnimationFrame(tick);
+    };
+
+    requestAnimationFrame(tick);
+  </script>
+</body>
+</html>

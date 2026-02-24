@@ -10,6 +10,66 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg?v=4" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .video-examples {
+      margin-top: 1.5rem;
+    }
+
+    .video-frames {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      margin-top: 1rem;
+    }
+
+    .video-frame-wrap {
+      position: relative;
+      padding: 0.85rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: 0 0 18px rgba(79, 124, 255, 0.14);
+    }
+
+    .video-frame {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      border: 1px solid rgba(0, 245, 255, 0.45);
+      border-radius: 12px;
+      background: linear-gradient(150deg, rgba(10, 18, 48, 0.9), rgba(8, 13, 34, 0.95));
+    }
+
+    .video-toggle {
+      position: absolute;
+      right: 1.35rem;
+      bottom: 3.3rem;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(0, 245, 255, 0.5);
+      border-radius: 999px;
+      background: rgba(2, 18, 38, 0.86);
+      color: var(--neon-cyan);
+      font-family: "Rajdhani", sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      line-height: 1;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .video-toggle:hover {
+      box-shadow: 0 0 14px rgba(0, 245, 255, 0.2);
+    }
+
+    .video-label {
+      margin: 0.55rem 0 0;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -27,10 +87,80 @@
   </header>
 
   <main class="page">
-    <h1>Types de videos et prix</h1>
-    <p class="lead">Aucun exemple projet ici: uniquement formats produits et tarifs.</p>
+    
+
+    <section class="video-examples" aria-labelledby="video-examples-title">
+      <h2 id="video-examples-title">Exemples videos (format vertical)</h2>
+      <div class="video-frames">
+        <article class="video-frame-wrap">
+          <video
+            class="video-frame"
+            title="Video 1"
+            preload="metadata"
+            playsinline
+            controlslist="nodownload nofullscreen noplaybackrate"
+            disablepictureinpicture
+            disableremoteplayback
+          >
+            <source src="resources/pfv1.mp4" type="video/mp4" />
+          </video>
+          <button class="video-toggle" type="button" aria-label="Lecture ou pause de la video 1">▶️</button>
+        </article>
+
+        <article class="video-frame-wrap">
+          <video
+            class="video-frame"
+            title="Video 2"
+            preload="metadata"
+            playsinline
+            controlslist="nodownload nofullscreen noplaybackrate"
+            disablepictureinpicture
+            disableremoteplayback
+          >
+            <source src="resources/pfv2.mp4" type="video/mp4" />
+          </video>
+          <button class="video-toggle" type="button" aria-label="Lecture ou pause de la video 2">▶️</button>
+          <p class="video-label">Créateur de contenu TikTok et Twitch</p>
+        </article>
+
+        <article class="video-frame-wrap">
+          <video
+            class="video-frame"
+            title="Video 3"
+            preload="metadata"
+            playsinline
+            controlslist="nodownload nofullscreen noplaybackrate"
+            disablepictureinpicture
+            disableremoteplayback
+          >
+            <source src="resources/pfv3.mp4" type="video/mp4" />
+          </video>
+          <button class="video-toggle" type="button" aria-label="Lecture ou pause de la video 3">▶️</button>
+          <p class="video-label">Créateur de contenu TikTok et Twitch</p>
+        </article>
+
+        <article class="video-frame-wrap">
+          <video
+            class="video-frame"
+            title="Video 4"
+            preload="metadata"
+            playsinline
+            controlslist="nodownload nofullscreen noplaybackrate"
+            disablepictureinpicture
+            disableremoteplayback
+          >
+            <source src="resources/pfv4.mp4" type="video/mp4" />
+          </video>
+          <button class="video-toggle" type="button" aria-label="Lecture ou pause de la video 4">▶️</button>
+          <p class="video-label">Créateur de contenu TikTok et Twitch</p>
+        </article>
+      </div>
+    </section>
+
+
 
     <section class="pricing-grid">
+      <h1>Types de videos et prix</h1>
       <article class="price-card">
         <p class="chip">Short</p>
         <h2>Short 30 sec</h2>
@@ -41,13 +171,13 @@
         <p class="chip">Short+</p>
         <h2>Short 60 sec</h2>
         <p class="price">30 EUR</p>
-        <p>Transitions, captions dynamiques et sound design leger.</p>
+        <p>Montage plus long en vertical avec textes et musiques de fond.</p>
       </article>
       <article class="price-card highlight">
         <p class="chip">Medium</p>
         <h2>Vidéo 5 min</h2>
         <p class="price">50 EUR</p>
-        <p>Declinaisons format reseaux avec style coherent.</p>
+        <p>Video horizontale avec qualité professionnelle.</p>
       </article>
       <article class="price-card">
         <p class="chip">Medium+</p>
@@ -59,25 +189,25 @@
         <p class="chip">Medium++</p>
         <h2>Video 15 min</h2>
         <p class="price">120 EUR</p>
-        <p>Rythme avance, sound design et habillage plus pousse.</p>
+        <p>Montage plus long pour une meilleure qualité.</p>
       </article>
       <article class="price-card">
         <p class="chip">Long I</p>
         <h2>Video 20 min</h2>
         <p class="price">140 EUR</p>
-        <p>Formats 9:16, 1:1 et 16:9 pour campagnes social ads.</p>
+        <p>Pour longs enregistrements.</p>
       </article>
       <article class="price-card">
         <p class="chip">Long II</p>
         <h2>Video 25 min</h2>
         <p class="price">155 EUR</p>
-        <p>Montage de qualite pro, musique sous licence et mixage avance.</p>
+        <p>Montage appliqué et longs enregistrements.</p>
       </article>
       <article class="price-card">
         <p class="chip">Long III</p>
         <h2>Video 30 min</h2>
         <p class="price">170 EUR</p>
-        <p>Montage narratif, sound design pousse et habillage graphique.</p>
+        <p>Pour videos de très longue durée.</p>
       </article>
     </section>
 
@@ -91,11 +221,30 @@
   </main>
 
   <footer class="site-footer"><p>© 2026 NC Studio - Site fait par LSE</p></footer>
+  <script>
+    document.querySelectorAll(".video-frame-wrap").forEach((wrap) => {
+      const video = wrap.querySelector(".video-frame");
+      const toggle = wrap.querySelector(".video-toggle");
+
+      if (!video || !toggle) return;
+
+      const syncLabel = () => {
+        toggle.textContent = video.paused ? "▶️" : "||";
+      };
+
+      toggle.addEventListener("click", () => {
+        if (video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      });
+
+      video.addEventListener("play", syncLabel);
+      video.addEventListener("pause", syncLabel);
+      syncLabel();
+    });
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
