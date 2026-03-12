@@ -52,7 +52,7 @@ const showOfferPopup = () => {
       <button class="offer-popup__close" type="button" aria-label="Fermer">&times;</button>
       <p class="offer-popup__eyebrow">Offre de lancement</p>
       <h2>Les 2 premières créations sont gratuites !</h2>
-      <p>Valable sur les logos et bannières.</p>
+      <p>Valable sur les logos.</p>
       <a class="btn btn-primary" href="https://discord.gg/3ukNzVD94q" target="_blank" rel="noopener noreferrer">J'en profite sur Discord</a>
     </div>
   `;
